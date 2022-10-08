@@ -15,7 +15,7 @@
 
 function Main() {
     'use strict';
-    var font = "Iosevka SS09, Source Code Pro, Consolas, sans-serif";
+    var font = "sans-serif";
     document.querySelectorAll('.Card, .Substat, h3').forEach(element => {
         element.style.fontFamily = font;
         element.style.fontWeight = "bold";
