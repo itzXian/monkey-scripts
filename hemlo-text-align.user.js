@@ -13,8 +13,8 @@
 
 waitForKeyElements ("picture[data-v-1330d100]", removeBackgroundPicture);
 waitForKeyElements (".wrapper[data-v-474eccbc]", textAlign);
-waitForKeyElements ("div.button-wrapper button", el);
 waitForKeyElements ("figure figcaption[data-v-001292fc]", hideName);
+waitForKeyElements ("div.button-wrapper button", el);
 
 function removeBackgroundPicture() {
     document.querySelector("picture[data-v-1330d100]").remove();
@@ -23,8 +23,11 @@ function removeBackgroundPicture() {
 function textAlign () {
     document.querySelectorAll(".wrapper[data-v-474eccbc]").forEach( element => {
         element.style.textAlign = "left";
+        element.style.fontSize = "medium";
+        element.style.fontWeight = "bold";
     });
 };
+
 function hideName() {
     document.querySelectorAll("figure figcaption[data-v-001292fc]").forEach( element => {
         element.style.fontSize = 0;
