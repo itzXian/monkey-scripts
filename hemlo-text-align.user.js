@@ -25,6 +25,7 @@ function textAlign () {
         element.style.textAlign = "left";
         element.style.fontSize = "medium";
         element.style.fontWeight = "bold";
+        element.lastChild.style.backgroundColor = "#fff3";
     });
 };
 
