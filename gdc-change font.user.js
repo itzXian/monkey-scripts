@@ -18,6 +18,7 @@ function Main() {
     var font = "sans-serif";
     document.body.style.fontFamily = font;
     document.body.style.fontWeight = "bold";
+    document.body.style.background = "#2e3440";
     document.querySelectorAll('.name').forEach(element => {
         element.style.fontFamily = font;
         element.style.fontWeight = "bold";
