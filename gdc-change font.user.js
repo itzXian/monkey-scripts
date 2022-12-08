@@ -23,4 +23,8 @@ function Main() {
         element.style.fontFamily = font;
         element.style.fontWeight = "bold";
     });
+    document.querySelectorAll('div.full-height-wrapper').forEach( element => (
+        a.style.maxHeight = "";
+    ));
+    document.querySelector('div.gi-char-list-items-wrapper').style.maxHeight = "";
 };
