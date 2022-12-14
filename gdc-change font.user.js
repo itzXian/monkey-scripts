@@ -11,29 +11,35 @@
 // @require  https://gist.github.com/raw/2625891/waitForKeyElements.js
 // ==/UserScript==
 
- waitForKeyElements (".name", Main);
- waitForKeyElements ("div.main-stat", setArtifactHeight);
- waitForKeyElements ("div.gi-char-info-name", setCharacterHeight);
+ waitForKeyElements (".name", Main);
+ waitForKeyElements ("div.main-stat", setArtifactHeight);
+ waitForKeyElements ("div.gi-char-info-name", setCharacterHeight);
 
 function Main() {
-    'use strict';
-    var font = "sans-serif";
-    document.body.style.fontFamily = font;
-    document.body.style.fontWeight = "bold";
-    document.body.style.background = "#2e3440";
-    document.querySelectorAll('.name').forEach(element => {
-        element.style.fontFamily = font;
-        element.style.fontWeight = "bold";
-    });
+    'use strict';
+    var font = "sans-serif";
+    document.body.style.fontFamily = font;
+    document.body.style.fontWeight = "bold";
+    document.body.style.background = "#2e3440";
+    document.querySelectorAll('.name').forEach(element => {
+        element.style.fontFamily = font;
+        element.style.fontWeight = "bold";
+    });
 };
 function setArtifactHeight() {
-    document.querySelectorAll('div.full-height-wrapper').forEach( element => (
-        element.style.maxHeight = ""
-    ));
+
+    document.querySelectorAll('div.full-height-wrapper').forEach( element => {
+        if (element.style.maxHeight) {
+            element.style.maxHeight = window.innerHeight + 'px';
+            element.style.height = window.innerHeight + 'px'
+        };
+    });
 }
 function setCharacterHeight() {
-    document.querySelector('div.gi-char-list-items-wrapper').style.maxHeight = "";
-    document.querySelectorAll("input").forEach( element => (
-        element.style.fontFamily = "sans-serif"
-    ))
+    if (document.querySelector('div.gi-char-list-items-wrapper').style.maxHeight) {
+        document.querySelector('div.gi-char-list-items-wrapper').style.maxHeight = window.innerHeight + 'px';
+    };
+    document.querySelectorAll("input").forEach( element => (
+        element.style.fontFamily = "sans-serif"
+    ))
 };
