@@ -13,7 +13,8 @@
 
  waitForKeyElements (".name", Main);
  waitForKeyElements ("div.main-stat", setArtifactHeight);
- waitForKeyElements ("div.gi-char-info-name", setCharacterHeight);
+ waitForKeyElements ("div.char-info", setCharacterHeight);
+
 
 function Main() {
     'use strict';
@@ -27,7 +28,6 @@ function Main() {
     });
 };
 function setArtifactHeight() {
-
     document.querySelectorAll('div.full-height-wrapper').forEach( element => {
         if (element.style.maxHeight) {
             element.style.maxHeight = window.innerHeight + 'px';
@@ -36,8 +36,12 @@ function setArtifactHeight() {
     });
 }
 function setCharacterHeight() {
-    if (document.querySelector('div.gi-char-list-items-wrapper').style.maxHeight) {
-        document.querySelector('div.gi-char-list-items-wrapper').style.maxHeight = window.innerHeight + 'px';
+    if (document.querySelector('.full-height-wrapper')) {
+        document.querySelectorAll('.full-height-wrapper').forEach(
+            element => (
+                element.style.maxHeight = window.innerHeight + 'px'
+            )
+        );
     };
     document.querySelectorAll("input").forEach( element => (
         element.style.fontFamily = "sans-serif"
