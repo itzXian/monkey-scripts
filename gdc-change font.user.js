@@ -36,12 +36,9 @@ function setArtifactHeight() {
     });
 }
 function setCharacterHeight() {
-    if (document.querySelector('.full-height-wrapper')) {
-        document.querySelectorAll('.full-height-wrapper').forEach(
-            element => (
-                element.style.maxHeight = window.innerHeight + 'px'
-            )
-        );
+    if (document.querySelector('body > div.gi-main-container > div.gi-layout-left-container > div > div.gi-tab-left.gi-tab-container.gi-share-container > div > div.tab-content > div > div.content > div')) {
+        document.querySelector('body > div.gi-main-container > div.gi-layout-left-container > div > div.gi-tab-left.gi-tab-container.gi-share-container > div > div.tab-content > div > div.content > div').style.maxHeight = window.innerHeight + 'px';
+        document.querySelector('body > div.gi-main-container > div.gi-layout-left-container > div > div.gi-tab-left.gi-tab-container.gi-share-container > div > div.tab-content > div > div.content > div').style.height = window.innerHeight + 'px';
     };
     document.querySelectorAll("input").forEach( element => (
         element.style.fontFamily = "sans-serif"
