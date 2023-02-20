@@ -25,7 +25,8 @@ function textAlign () {
         element.style.textAlign = "left";
         element.style.fontSize = "medium";
         element.style.fontWeight = "bold";
-        element.lastChild.style.backgroundColor = "#fff3";
+        element.lastChild.style.backgroundColor = "#fff0";
+        element.firstChild.innerHTML = element.firstChild.innerHTML.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
     });
 };
 
