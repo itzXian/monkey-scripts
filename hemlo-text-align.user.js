@@ -5,7 +5,7 @@
 // @description  try to take over the world!
 // @author       You
 // @match        https://genshin.hemlo.cc/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=genshin.hemlo.cc
+// @icon         https://genshin.hemlo.cc/partybuilder/favicon.ico
 // @require  http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js
 // @require  https://gist.github.com/raw/2625891/waitForKeyElements.js
 // @grant        none
@@ -13,12 +13,25 @@
 
 waitForKeyElements ("picture[data-v-1330d100]", removeBackgroundPicture);
 waitForKeyElements (".wrapper[data-v-474eccbc]", textAlign);
-waitForKeyElements ("figure figcaption[data-v-001292fc]", hideName);
+waitForKeyElements ("figure figcaption[data-v-d5f09996]", hideName);
 waitForKeyElements ("div.button-wrapper button", el);
 
 function removeBackgroundPicture() {
     document.querySelector("picture[data-v-1330d100]").remove();
 };
+
+(function changeFont () {
+    document.querySelector("head > style").innerText = `
+        @font-face {
+            font-family: sans-serif;
+		    font-weight: bold;
+            text-transform: uppercase;
+        }
+        nav, button {
+            text-transform: uppercase;
+        }
+    `;
+})();
 
 function textAlign () {
     document.querySelectorAll(".wrapper[data-v-474eccbc]").forEach( element => {
@@ -31,7 +44,7 @@ function textAlign () {
 };
 
 function hideName() {
-    document.querySelectorAll("figure figcaption[data-v-001292fc]").forEach( element => {
+    document.querySelectorAll("figure figcaption[data-v-d5f09996]").forEach( element => {
         element.style.fontSize = 0;
     });
 };
