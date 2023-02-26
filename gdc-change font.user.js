@@ -14,7 +14,7 @@
  waitForKeyElements (".name", Main);
  waitForKeyElements ("div.main-stat", setArtifactHeight);
  waitForKeyElements ("div.char-info", setCharacterHeight);
-
+ waitForKeyElements (".accordion-item:last-child", uncheckCheckbox);
 
 function Main() {
     'use strict';
@@ -27,6 +27,7 @@ function Main() {
         element.style.fontWeight = "bold";
     });
 };
+
 function setArtifactHeight() {
     document.querySelectorAll('div.full-height-wrapper').forEach( element => {
         if (element.style.maxHeight) {
@@ -34,7 +35,8 @@ function setArtifactHeight() {
             element.style.height = window.innerHeight + 'px'
         };
     });
-}
+};
+
 function setCharacterHeight() {
     if (document.querySelector('body > div.gi-main-container > div.gi-layout-left-container > div > div.gi-tab-left.gi-tab-container.gi-share-container > div > div.tab-content > div > div.content > div')) {
         document.querySelector('body > div.gi-main-container > div.gi-layout-left-container > div > div.gi-tab-left.gi-tab-container.gi-share-container > div > div.tab-content > div > div.content > div').style.maxHeight = window.innerHeight + 'px';
@@ -43,4 +45,10 @@ function setCharacterHeight() {
     document.querySelectorAll("input").forEach( element => (
         element.style.fontFamily = "sans-serif"
     ))
+};
+
+function uncheckCheckbox () {
+    document.querySelector(".accordion-item:last-child").querySelectorAll(".checkbox").forEach( element => {
+        element.checked = false;
+    });
 };
