@@ -14,7 +14,8 @@
  waitForKeyElements (".name", Main);
  waitForKeyElements ("div.main-stat", setArtifactHeight);
  waitForKeyElements ("div.char-info", setCharacterHeight);
- waitForKeyElements (".accordion-item:last-child", uncheckCheckbox);
+ waitForKeyElements ("div.accordion-stat-filter", createButton);
+// waitForKeyElements ("div.accordion-stat-filter", uncheckCheckbox(document));
 
 function Main() {
     'use strict';
@@ -47,8 +48,35 @@ function setCharacterHeight() {
     ))
 };
 
-function uncheckCheckbox () {
-    document.querySelector(".accordion-item:last-child").querySelectorAll(".checkbox").forEach( element => {
-        element.checked = false;
-    });
+function createButton () {
+    document.querySelector("div.accordion-stat-filter").insertAdjacentHTML("afterbegin", `
+
+<div class="controls-bar">
+    <div class="item">
+        <div>
+            <div onclick='
+                document.querySelector(".accordion-item:last-child").querySelectorAll(".checkbox").forEach( element => {
+                    element.click();
+                });
+            '
+                class="inputs-button"><span class="inputs-button-icon icon-ok"></span>Invert select
+            </div>
+        </div>
+    </div>
+</div>
+    `);
 };
+
+/*
+var uncheckCheckbox = (function(element) {
+    var executed = false;
+    return function() {
+        if (!executed) {
+            executed = true;
+            element.querySelector(".accordion-item:last-child").querySelectorAll(".checkbox").forEach( element => {
+                element.click();
+            });
+        }
+    };
+})();
+*/
