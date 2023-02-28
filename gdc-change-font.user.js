@@ -15,7 +15,8 @@
  waitForKeyElements ("div.main-stat", setArtifactHeight);
  waitForKeyElements ("div.char-info", setCharacterHeight);
  waitForKeyElements ("div.accordion-stat-filter", createButton);
-// waitForKeyElements ("div.accordion-stat-filter", uncheckCheckbox(document));
+ waitForKeyElements ("body > div.gi-modal.gi-window-select.gi-window-select-grouplist", createButton2);
+ waitForKeyElements ("body > div.gi-main-container > div.gi-layout-right-container > div > div.gi-tab-right.gi-tab-container.gi-bestart-container.gi-tab-left > div > div.tab-content > div > div.content > div > div.simplebar-wrapper > div.simplebar-mask > div > div > div > div > div:nth-child(2) > div.accordion-item-content", createButton3);
 
 function Main() {
     'use strict';
@@ -56,6 +57,38 @@ function createButton () {
         <div>
             <div onclick='
                 document.querySelector(".accordion-item:last-child").querySelectorAll(".checkbox").forEach( element => {
+                    element.click();
+                });
+            '
+                class="inputs-button"><span class="inputs-button-icon icon-ok"></span>Invert select
+            </div>
+        </div>
+    </div>
+</div>
+    `);
+};
+
+function createButton2 () {
+    document.querySelector("body > div.gi-modal.gi-window-select.gi-window-select-grouplist > div.gi-modal-content > div.gi-window-select-footer > div.gi-modal-buttons").insertAdjacentHTML("afterbegin", `
+
+<div onclick='
+    document.querySelector(".gi-grouplist-items").querySelectorAll(".gi-checkbox-wrapper").forEach( element => {
+        element.click();
+        });
+'
+class="gi-inputs-button modal-invert-select"><span class="gi-inputs-button-icon button-icon-ok"></span>Insert Select
+</div>
+    `);
+};
+
+function createButton3 () {
+    document.querySelector("body > div.gi-main-container > div.gi-layout-right-container > div > div.gi-tab-right.gi-tab-container.gi-bestart-container.gi-tab-left > div > div.tab-content > div > div.content > div > div.simplebar-wrapper > div.simplebar-mask > div > div > div > div > div:nth-child(2) > div.accordion-item-content").insertAdjacentHTML("afterbegin", `
+
+<div class="controls-bar">
+    <div class="item">
+        <div>
+            <div onclick='
+                document.querySelector("body > div.gi-main-container > div.gi-layout-right-container > div > div.gi-tab-right.gi-tab-container.gi-bestart-container.gi-tab-left > div > div.tab-content > div > div.content > div > div.simplebar-wrapper > div.simplebar-mask > div > div > div > div > div:nth-child(2) > div.accordion-item-content").querySelectorAll(".checkbox-wrapper").forEach( element => {
                     element.click();
                 });
             '
