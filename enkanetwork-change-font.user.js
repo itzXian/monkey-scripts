@@ -15,9 +15,9 @@
 
 function Main() {
     'use strict';
-    var font = "sans-serif";
-    document.querySelectorAll('.Card, .Substat, h3').forEach(element => {
+    var font = '"Noto Sans", sans-serif';
+    document.querySelectorAll(".Card, .Substat, .CharacterList, .title, .stats, .level,  h3, p, b, .svelte-grjiuv").forEach(element => {
         element.style.fontFamily = font;
-        element.style.fontWeight = "bold";
+        element.style.fontWeight = 600;
     });
 }
