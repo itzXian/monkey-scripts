@@ -11,7 +11,7 @@
 // @require  https://gist.github.com/raw/2625891/waitForKeyElements.js
 // ==/UserScript==
 
- waitForKeyElements (".Card", Main);
+ waitForKeyElements (".Substat", Main);
 
 function Main() {
     'use strict';
