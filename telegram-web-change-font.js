@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        Telegram Web
+// @name        telegram-web-change-font
 // @namespace   Violentmonkey Scripts
 // @match       https://web.telegram.org/z/
 // @grant       none
