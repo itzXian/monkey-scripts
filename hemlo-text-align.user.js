@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Genshin Team Creater Text Align
+// @name         hemlo-text-align
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!
@@ -16,6 +16,7 @@ waitForKeyElements (".wrapper[data-v-474eccbc]", textAlign);
 waitForKeyElements ("figure figcaption[data-v-d5f09996]", hideName);
 waitForKeyElements ("div.button-wrapper button", el);
 waitForKeyElements (".owned > picture.portrait", hidePlaceholder);
+waitForKeyElements ("#available-characters[data-v-ecedbdd2]", ffFix);
 
 function removeBackgroundPicture() {
     document.querySelector("picture[data-v-1330d100]").remove();
@@ -61,3 +62,10 @@ function hidePlaceholder() {
 function el() {
     document.querySelector('.button-wrapper button').addEventListener("click", textAlign, false);
 };
+
+function ffFix() {
+    var element = document.querySelector("#available-characters[data-v-ecedbdd2]");
+    element.style.width = "90%";
+    document.querySelector("button[data-v-4c5285f0]:last-child").click();
+    //elememt.style.maxWidth = "100%";
+}

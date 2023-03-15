@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Damage.Paimon Change Scrollbar
+// @name         damagepaimon-change-scrollbar
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!

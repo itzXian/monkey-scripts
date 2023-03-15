@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Yande.re Post Info in Browser Mode
+// @name         yandere-post-info-browser-mode
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!

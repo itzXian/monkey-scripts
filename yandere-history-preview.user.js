@@ -1,35 +1,29 @@
 // ==UserScript==
-// @name         Yande.re History Preview
+// @name         yandere-history-preview
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!
 // @author       You
-// @match        https://yande.re/history*
+// @match        https://yande.re/post/browse
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=yande.re
 // @grant        none
 // ==/UserScript==
 
-const imgUrls = document.scripts[8].textContent.toString().replace("\\", '').match(/(?<=preview_url":").*?jpg/gm);
-
-let i = 0;
-document.querySelectorAll('tr.even,tr.odd').forEach( element => {
-    let img = document.createElement("img");
-    if (! element.children[2].attributes[0].nodeValue.includes('deleted')) {
-        img.src = imgUrls[i];
-        i++;
-    } else {
-        img.src = "https://assets.yande.re/assets/deleted-preview-8d2b089b4ee6ee29830e02fbff9091dda4181717561bd458285288c431c50d38.png";
-    };
-    element.appendChild(img);
-});
+function main() {
+  const postInfo = document.querySelector('.post-info');
+  const isShow = postInfo.style.display === "";
+  postInfo.style.display = isShow ? "none" : "";
+};
+document.querySelector('div.image-container').addEventListener('click', main, false);
 
 /*
-while (i < imgUrls.length) {
-    let img = document.createElement("img");
-    img.src = imgUrls[i];
-    document.querySelectorAll('tr.even,tr.odd')[i].appendChild(img);
-    i++;
+function main() {
+    if (document.querySelector('.post-info').style.display === "") {
+        document.querySelector('.post-info').style.display = "none";
+    } else {
+        document.querySelector('.post-info').style.display = "";
+    };
 };
-*/
 
-document.getElementById('hover-thumb').remove();
+document.querySelector('div.image-container').addEventListener('dblclick', main, false);
+*/
