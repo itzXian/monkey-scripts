@@ -68,5 +68,20 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
 }
+.css-1qjkq4 {
+    background-color: #0C1020C0;
+    backdrop-filter: blur(20px);
+}
+.css-1xff9li {
+    background-color: #0C1020C0;
+    backdrop-filter: blur(20px);
+    background-image: none;
+}
+.css-yl7lcc {
+    background-color: #0C1020;
+}
+.css-k008qs {
+　　background-color: #0C1020;
+}
 </style>
 `)
