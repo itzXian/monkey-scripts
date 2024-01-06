@@ -84,4 +84,7 @@ code {
 　　background-color: #0C1020;
 }
 </style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
 `)
