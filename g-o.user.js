@@ -19,6 +19,7 @@ fetch(url()).then((response) => response.text())
 */
 
 document.querySelector("link[rel=stylesheet]").remove();
+document.querySelector("head > script:nth-child(48)").remove();
 document.querySelector("html > head").insertAdjacentHTML("beforeend", `
 <style>
 * {
