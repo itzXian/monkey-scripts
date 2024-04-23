@@ -13,7 +13,7 @@
 
 waitForKeyElements ("picture[data-v-1330d100]", removeBackgroundPicture);
 waitForKeyElements (".wrapper[data-v-474eccbc]", textAlign);
-waitForKeyElements ("figure figcaption[data-v-3309cce5]", hideName);
+waitForKeyElements ("figcaption", hideName);
 waitForKeyElements ("div.button-wrapper button", el);
 waitForKeyElements (".owned > picture.portrait", hidePlaceholder);
 waitForKeyElements ("#available-characters[data-v-ecedbdd2]", ffFix);
