@@ -11,15 +11,16 @@
 // @grant        none
 // ==/UserScript==
 
-waitForKeyElements ("picture[data-v-1330d100]", removeBackgroundPicture);
-waitForKeyElements (".wrapper[data-v-474eccbc]", textAlign);
+waitForKeyElements ("picture[data-v-b58a87c8]", removeBackgroundPicture);
+// waitForKeyElements (".wrapper[data-v-474eccbc]", textAlign);
+//waitforKeyElements ("div.name", supportHyperText);
+waitForKeyElements ("div.name", el);
 waitForKeyElements ("figcaption", hideName);
-waitForKeyElements ("div.button-wrapper button", el);
 waitForKeyElements (".owned > picture.portrait", hidePlaceholder);
 waitForKeyElements ("#available-characters[data-v-ecedbdd2]", ffFix);
 
 function removeBackgroundPicture() {
-    document.querySelector("picture[data-v-1330d100]").remove();
+    document.querySelector("picture[data-v-b58a87c8]").remove();
 };
 
 (function changeFont () {
@@ -35,6 +36,7 @@ function removeBackgroundPicture() {
     `;
 })();
 
+/**
 function textAlign () {
     document.querySelectorAll(".wrapper[data-v-474eccbc]").forEach( element => {
         element.style.textAlign = "left";
@@ -44,6 +46,7 @@ function textAlign () {
         element.firstChild.innerHTML = element.firstChild.innerHTML.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
     });
 };
+**/
 
 function hideName() {
     document.querySelectorAll("figure figcaption[data-v-3309cce5]").forEach( element => {
@@ -61,12 +64,19 @@ function hidePlaceholder() {
 };
 
 function el() {
-    document.querySelector('.button-wrapper button').addEventListener("click", textAlign, false);
+//    document.querySelector('.button-wrapper button').addEventListener("click", textAlign, false);
+    document.querySelector('body').addEventListener("click", supportHyperText, false);
+};
+
+function supportHyperText() {
+    document.querySelectorAll("div.name").forEach( element => {
+        element.innerHTML = element.innerText;
+    });
 };
 
 function ffFix() {
     var element = document.querySelector("#available-characters[data-v-ecedbdd2]");
     element.style.width = "90%";
-    document.querySelector("button[data-v-4c5285f0]:last-child").click();
+    document.querySelector("body > main > div.button-wrapper > button").click();
     //elememt.style.maxWidth = "100%";
 }
