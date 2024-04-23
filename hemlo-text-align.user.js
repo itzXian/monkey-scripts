@@ -24,7 +24,7 @@ function removeBackgroundPicture() {
 };
 
 (function changeFont () {
-    document.querySelector("head > style").innerText = `
+    document.querySelector("head > style").innerHTML = `
         @font-face {
             font-family: sans-serif;
 		    font-weight: bold;
@@ -32,6 +32,9 @@ function removeBackgroundPicture() {
         }
         nav, button {
             text-transform: uppercase;
+        }
+        p {
+            font-family: sans-serif;
         }
     `;
 })();
