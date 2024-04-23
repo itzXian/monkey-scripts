@@ -7,6 +7,8 @@
 // @author      -
 // @description 3/6/2023, 8:43:16 AM
 // @icon        https://frzyc.github.io/genshin-optimizer/favicon.ico
+// @require  http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js
+// @require  https://gist.github.com/raw/2625891/waitForKeyElements.js
 // ==/UserScript==
 
 /*
@@ -18,8 +20,9 @@ fetch(url()).then((response) => response.text())
   .then((data) => console.log(data));
 */
 
+waitForKeyElements("head > script:nth-child(20)", removeAds);
+
 document.querySelector("link[rel=stylesheet]").remove();
-document.querySelector("head > script:nth-child(48)").remove();
 document.querySelector("html > head").insertAdjacentHTML("beforeend", `
 <style>
 * {
@@ -88,4 +91,8 @@ code {
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-`)
+`);
+
+function removeAds (){
+    document.querySelector("head > script:nth-child(20)").remove();
+}
