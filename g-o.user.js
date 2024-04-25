@@ -20,8 +20,6 @@ fetch(url()).then((response) => response.text())
   .then((data) => console.log(data));
 */
 
-waitForKeyElements("head > script:nth-child(20)", removeAds);
-
 document.querySelector("link[rel=stylesheet]").remove();
 document.querySelector("html > head").insertAdjacentHTML("beforeend", `
 <style>
@@ -74,11 +72,11 @@ code {
 }
 .css-1qjkq4 {
     background-color: #0C1020C0;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(5px);
 }
 .css-1xff9li {
     background-color: #0C1020C0;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(5px);
     background-image: none;
 }
 .css-yl7lcc {
@@ -93,6 +91,16 @@ code {
 
 `);
 
+waitForKeyElements("head > script:nth-child(20)", removeAds);
+waitForKeyElements(".ad-wrapper", removeAds);
+
 function removeAds (){
-    document.querySelector("head > script:nth-child(20)").remove();
+    document.querySelector(".ad-wrapper").remove();
+//    document.querySelector("head > script:nth-child(20)").remove();
+    //document.querySelector(".adsbygoogle").remove();
+    /**
+    document.querySelectorAll(".ad-wrapper").forEarch( element => {
+        element.remove();
+    });
+    **/
 }
