@@ -32,6 +32,7 @@ function removeBackgroundPicture() {
         }
         nav, button {
             text-transform: uppercase;
+            font-family: sans-serif;
         }
         * {
             font-family: sans-serif;
