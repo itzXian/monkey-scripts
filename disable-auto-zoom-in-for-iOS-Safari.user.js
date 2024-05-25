@@ -2,7 +2,7 @@
 // @name        disable auto zoom in when focus on input field for iOS Safari
 // @namespace   Violentmonkey Scripts
 // @match       <all_urls>
-// @exclude     https://*.bga.cn/*
+// @exclude     https://*.nga.cn/*
 // @grant       none
 // @version     1.0
 // @author      -
