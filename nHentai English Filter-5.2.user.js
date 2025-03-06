@@ -8,7 +8,7 @@
 // @icon           https://i.imgur.com/pGYy5SR.png
 // @version        5.2
 // @downloadURL https://update.sleazyfork.org/scripts/374089/nHentai%20English%20Filter.user.js
-// @updateURL https://update.sleazyfork.org/scripts/374089/nHentai%20English%20Filter.meta.js
+// @updateURL https://github.com/itzXian/monkey-scripts/raw/refs/heads/master/nHentai%20English%20Filter-5.2.user.js
 // ==/UserScript==
 var pathname = window.location.pathname;
 var namespaceQuery = window.location.pathname.split('/')[2];
